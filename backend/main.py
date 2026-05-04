@@ -43,11 +43,11 @@ def startup_event():
     
 
 # --- Rota: Saldo ---
-@app.get("/saldo")
+"""@app.get("/saldo")
 def obter_saldo(
     cliente_atual: models.Cliente = Depends(auth.obter_cliente_atual),
     db: Session = Depends(get_db)
-):
+):"""
     # OTIMIZAÇÃO: Busca apenas as colunas necessárias (reduz carga na rede/banco)
     conta = db.query(models.ContaBancaria).filter(
         models.ContaBancaria.fk_idCliente == cliente_atual.idCliente
